@@ -1,0 +1,13 @@
+version: '2'
+services:
+  nginx:
+    image: nginx:latest
+    container_name: react_demo_nginx
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./build:/var/www/
+      # - ./nginx/cert/star_xx_com.pem:/etc/nginx/cert/star_xx_com.pem
+      # - ./nginx/cert/star_xx_com.key:/etc/nginx/cert/star_xx_com.key
+      # - ./nginx/cert/star_xx_com.crt:/etc/nginx/cert/star_xx_com.crt
+    ports:
+      - 8080:80
