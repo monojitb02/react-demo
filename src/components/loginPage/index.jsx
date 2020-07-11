@@ -3,7 +3,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import bg from './images/login-side-image.png';
-import SignIn from '../signin';
+import SignIn from '../SignIn';
 export default class LoginPage extends React.Component {
   render() {
     return (

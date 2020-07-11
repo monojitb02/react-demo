@@ -1,8 +1,9 @@
-version: '2'
+version: '3.8'
 services:
   nginx:
     image: nginx:latest
     container_name: react_demo_nginx
+    restart: always
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./build:/var/www/
@@ -11,3 +12,9 @@ services:
       # - ./nginx/cert/star_xx_com.crt:/etc/nginx/cert/star_xx_com.crt
     ports:
       - 8080:80
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
