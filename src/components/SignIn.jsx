@@ -7,6 +7,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 // import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import LinearProgress from '@material-ui/core/LinearProgress';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Copyright from './Copyright';
@@ -83,7 +84,9 @@ class SignIn extends React.Component {
               fullWidth
               variant="contained"
               color="primary"
+              disabled={submitted}
             > Sign In</Button>
+            {submitted && <LinearProgress />}
           </Box>
           <Grid container>
             <Grid item xs>
